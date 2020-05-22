@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: schedule-test
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Sachin
+Implementation-Vendor-Id: com.test
+Build-Jdk: 1.8.0_241
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/schedule-test
+Created-By: Maven Integration for Eclipse
+

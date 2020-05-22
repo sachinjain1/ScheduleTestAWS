@@ -1,0 +1,38 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: schedulertest-aws
+spec:
+  schedule: "SCHEDULE" # syntax is a same as in system cron jobs
+  concurrencyPolicy: Replace
+  successfulJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: schedulertest-aws
+            zone: db
+        spec:
+          volumes:
+          - name: asset-volume
+            persistentVolumeClaim:
+              claimName: asset-nfs-pvc-extended
+          imagePullSecrets:
+          - name: IMAGESECRET
+          containers:
+          - name: schedulertest-aws
+            volumeMounts:
+            - name: asset-volume
+              mountPath: /mnt/asset
+            image: https://hub.docker.com/repository/docker/sjain2643:IMAGEVERSION
+            args:
+            - /bin/sh
+            - -c
+            - date; java -jar app.jar
+          restartPolicy: OnFailure
+          securityContext:
+            fsGroup: 9999
+            runAsUser: 1000
+            supplementalGroups:
+            - 9999
