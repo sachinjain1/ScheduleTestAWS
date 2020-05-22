@@ -80,12 +80,12 @@ step([$class: 'CxScanBuilder', comment: '', credentialsId: '', excludeFolders: '
 
 def funDockerbuild() {
 	sh "cd $WORKSPACE && sh /var/lib/jenkins/login.sh
-    script {         
-                 def customImage = docker.build('sjain2643/scheduleraws', "./docker")
+   script {         
+                 def customImage = docker.build('sjain2643/petclinic', "./docker")
                  docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                  customImage.push("${env.BUILD_NUMBER}")
-                 }     
-}
+                 }                     
+           }
 
  def funhelmdeploy() 
      {
