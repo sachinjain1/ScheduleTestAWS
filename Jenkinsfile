@@ -88,9 +88,6 @@ def funDockerbuild() {
 		 sh "echo sachin"
          sh """#!/bin/bash
          pwd
-		  sh "echo after pwd"
-         cd $WORKSPACE
-		  sh "echo afterworkspace"
          sed -i "s/IMAGEVERSION/$IMAGEVERSION/g" scheduler.yaml
     	 sed -i "s/SCHEDULE/$SCHEDULE/g" scheduler.yaml
          export KUBECONFIG=$KUBECONFIGPATH
