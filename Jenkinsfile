@@ -69,7 +69,7 @@ def funCodeCompile(){
     sh "echo $KUBECONFIGPATH"
     sh "echo $IMAGEVERSION"
 	sh "echo $SCHEDULE"	
-withMaven(maven: 'mymaven',jdk: 'myjava') {
+withMaven(maven: 'maven3',jdk: 'JDK8') {
       sh "mvn clean install -f pom.xml -Dmaven.test.skip=true"
     }
 }
