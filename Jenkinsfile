@@ -85,6 +85,7 @@ def funDockerbuild() {
 
  def funhelmdeploy() 
      {
+		 export KUBECONFIG=$KUBECONFIGPATH 
 		 sh "echo sachin"
          sh """#!/bin/bash
          pwd
