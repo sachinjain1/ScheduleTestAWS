@@ -16,8 +16,6 @@ spec:
         spec:
           volumes:
           - name: asset-volume
-            persistentVolumeClaim:
-              claimName: asset-nfs-pvc-extended
           imagePullSecrets:
           - name: IMAGESECRET
           containers:
