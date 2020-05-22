@@ -25,7 +25,7 @@ spec:
             volumeMounts:
             - name: asset-volume
               mountPath: /mnt/asset
-            image: https://hub.docker.com/repository/docker/sjain2643:IMAGEVERSION
+            image: sjain2643/scheduler-backup-aws:IMAGEVERSION
             args:
             - /bin/sh
             - -c
