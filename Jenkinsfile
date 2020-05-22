@@ -85,6 +85,7 @@ def funDockerbuild() {
 
  def funhelmdeploy() 
      {
+		 sh "echo sachin"
          sh """#!/bin/bash
          pwd
          cd $WORKSPACE
