@@ -79,10 +79,10 @@ step([$class: 'CxScanBuilder', comment: '', credentialsId: '', excludeFolders: '
 }
 
 def funDockerbuild() {
-	sh "cd $WORKSPACE
-	sh /var/lib/jenkins/login.sh
+	sh "cd $WORKSPACE" 
+	sh /var/lib/jenkins/login.sh 
 	docker build -t $imageName . 
-	docker tag $imageName $imageRegistry/$imageName:$IMAGEVERSION
+	docker tag $imageName $imageRegistry/$imageName:$IMAGEVERSION 
 	docker push $imageRegistry/$imageName:$IMAGEVERSION"
 }
 
