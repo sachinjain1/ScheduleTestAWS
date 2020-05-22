@@ -91,7 +91,7 @@ def funDockerbuild() {
          sed -i "s/IMAGEVERSION/$IMAGEVERSION/g" scheduler.yaml
     	 sed -i "s/SCHEDULE/$SCHEDULE/g" scheduler.yaml
          export KUBECONFIG=$KUBECONFIGPATH
-         kubectl create -f scheduler.yaml	
+         sh 'kubectl create -f scheduler.yaml'	
          """
      }
 
