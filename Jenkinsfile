@@ -22,7 +22,7 @@ imageName = "scheduler-backup-aws"
 summaryTemp = "Docker Image build or push failed: (${env.JOB_NAME}) (${env.BUILD_URL})"
 MavenPlugin = "3.2"
 TOOLMAVEN = "MAVEN"
-imageRegistry = "https://registry.hub.docker.com/repository/docker/sjain2643/scheduleraws"
+imageRegistry = "sjain2643/scheduleraws"
 currentDate = new Date().format( 'yyyy.MM.dd' )
 BRANCH_NAME = ""
 NAMESPACE = ""
@@ -79,7 +79,7 @@ step([$class: 'CxScanBuilder', comment: '', credentialsId: '', excludeFolders: '
 }
 
 def funDockerbuild() {
-	sh "cd $WORKSPACE && sh /var/lib/jenkins/login.sh && docker build -t $imageName . && docker tag $imageName $imageRegistry/$imageName:1 && docker push $imageRegistry/$imageName:1"
+	sh "cd $WORKSPACE && sh /var/lib/jenkins/login.sh && docker build -t $imageName . && docker tag $imageName $imageRegistry/$imageName:$IMAGEVERSION && docker push $imageRegistry/$imageName:$IMAGEVERSION"
 
 }
 
