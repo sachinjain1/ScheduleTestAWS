@@ -15,14 +15,16 @@ spec:
             zone: db
         spec:
           volumes:
-          - name: asset-volume
+          - name: pv-nfs-pv1
+            persistentVolumeClaim:
+              claimName: pvc-nfs-pv1
           imagePullSecrets:
           - name: IMAGESECRET
           containers:
           - name: schedulertest-aws
             volumeMounts:
-            - name: asset-volume
-              mountPath: /mnt/asset
+            - name: pv-nfs-pv1
+              mountPath: /srv/nfs/kubedata
             image: sjain2643/scheduler-backup-aws:IMAGEVERSION
             args:
             - /bin/sh
