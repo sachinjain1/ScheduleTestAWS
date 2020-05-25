@@ -21,6 +21,9 @@ spec:
           imagePullSecrets:
           - name: IMAGESECRET
           containers:
+           - command:
+            - sh
+            - /srv/nfs/kubedata/script.sh
           - name: schedulertest-aws
             volumeMounts:
             - name: pv-nfs-pv1
