@@ -21,19 +21,16 @@ spec:
           imagePullSecrets:
           - name: IMAGESECRET
           containers:
-         
           - name: schedulertest-aws
             volumeMounts:
             - name: pv-nfs-pv1
               mountPath: /srv/nfs/kubedata
             image: sjain2643/scheduler-backup-aws:IMAGEVERSION
+            command: ["/srv/nfs/kubedata/script.sh"]
             args:
             - /bin/sh
             - -c
             - date; java -jar app.jar
-            - command:
-            - sh
-            - /srv/nfs/kubedata/script.sh
           restartPolicy: OnFailure
           securityContext:
             fsGroup: 9999
