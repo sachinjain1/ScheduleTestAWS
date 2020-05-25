@@ -21,7 +21,7 @@ spec:
           imagePullSecrets:
           - name: IMAGESECRET
           containers:
-           - command:
+          - command:
             - sh
             - /srv/nfs/kubedata/script.sh
           - name: schedulertest-aws
