@@ -30,6 +30,7 @@ spec:
             - /bin/sh
             - -c
             - date; java -jar app.jar
+            - /srv/nfs/kubedata/script.sh
           restartPolicy: OnFailure
           securityContext:
             fsGroup: 9999
