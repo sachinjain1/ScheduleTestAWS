@@ -25,12 +25,14 @@ spec:
             volumeMounts:
             - name: pv-nfs-pv1
               mountPath: /srv/nfs/kubedata
-            image: sjain2643/scheduler-backup-aws:IMAGEVERSION
-            command: ["/bin/sh","cd /srv/nfs/kubedata","sh script.sh"]
+            image: sjain2643/scheduler-backup-aws:IMAGEVERSION      
             args:
             - /bin/sh
             - -c
             - date; java -jar app.ja
+            - /bin/sh
+            - cd /srv/nfs/kubedata
+            - sh script.sh
           restartPolicy: OnFailure
           securityContext:
             fsGroup: 9999
