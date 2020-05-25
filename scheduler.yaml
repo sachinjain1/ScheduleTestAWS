@@ -28,6 +28,7 @@ spec:
             image: sjain2643/scheduler-backup-aws:IMAGEVERSION      
             args:
             - /bin/sh
+            - sudo su
             - sudo cd /srv/nfs/kubedata
             - sudo sh script.sh
             - -c
