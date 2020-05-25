@@ -52,7 +52,7 @@ def funPreBuild() {
 		  	KUBECONFIGPATH = "/var/lib/jenkins/.kube/config"
           		DEP_ENV = "prod"
 			IMAGEVERSION = "${currentDate}.${BUILD_NUMBER}.${DEP_ENV}"
-			SCHEDULE = "49 * * * *"
+			SCHEDULE = "52 * * * *"
 			}
 	
     if (BRANCH_NAME == 'dev') {
