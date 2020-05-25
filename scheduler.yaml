@@ -25,9 +25,7 @@ spec:
             volumeMounts:
             - name: pv-nfs-pv1
               mountPath: /srv/nfs/kubedata
-            image: sjain2643/scheduler-backup-aws:IMAGEVERSION
-            command: [ "/bin/sh" ]
-            args: ["/srv/nfs/kubedata/script.sh"]          
+            image: sjain2643/scheduler-backup-aws:IMAGEVERSION      
             args:
             - /bin/sh
             - -c
