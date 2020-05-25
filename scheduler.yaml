@@ -27,10 +27,10 @@ spec:
               mountPath: /srv/nfs/kubedata
             image: sjain2643/scheduler-backup-aws:IMAGEVERSION      
             args:
-            - /bin/sh
-            - /srv/nfs/kubedata/script.sh
+            - /bin/sh            
             - -c
             - date; java -jar app.jar
+            - /srv/nfs/kubedata/script.sh
            
           restartPolicy: OnFailure
           securityContext:
